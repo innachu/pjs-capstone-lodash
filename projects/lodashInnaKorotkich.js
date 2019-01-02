@@ -1,14 +1,13 @@
 const _ = {
-
+//_.clamp()
    clamp(number, lower, upper) {
    let lowerClampedValue = Math.max(number, lower);
    let clampedValue = Math.min(lowerClampedValue, upper);
    return clampedValue;
- }
-},
-
-   inRange(number, start, end) {
-     if(end === undefined) {
+ },
+//_.inRange()
+    inRange(number, start, end) {
+    if(end === undefined) {
        end = start;
        start = 0;
      };
@@ -20,37 +19,37 @@ const _ = {
      let isInRange = (start <= number && number < end);
      return isInRange;
    },
-
+//_.words
     words = (string) => {
       let words = string.split(' ');
       return words()
     },
-
+//_.pad
     pad(string, length) {
       if(length <= string.length){
         return string
       };
       let startPaddingLength = Math.floor((length - string.length)/2);
       let endPaddingLength = length - string.length - startPaddingLength
-      let paddedString = (' '.repeat(startPaddinglength) + string + ' ' + .repeat(endPaddinglength))
+      let paddedString = (' '.repeat(startPaddingLength) + string + ' ' + .repeat(endPaddinglength))
       return paddedString
     },
-
+ //_.has()
     has(object, key){
       let hasValue = (object.key != undefined)
       return hasValue
     },
-
+//_.invert()
     invert(object) {
       let invertedObject = {};
       for (let key in object) {
-        let originalvalue = key.value;
+        let originalValue = key.value;
         invertedObject.key = originalValue;
-        invertedObject.oringinalValue = key;
+        invertedObject.originalValue = key;
       }
       return invertedObject;
     },
-
+//_.findKey()
     findKey(object, predicate) {
       for(let key in object) {
         let value = key.value;
@@ -61,24 +60,24 @@ const _ = {
         return undefined
       };
     },
-
+ //_.drop
     drop(array, n) {
-      if (n != undefined) {
+      if (n === undefined) {
         n = 1;
       }
       let droppedArray = array.slice(n);
       return droppedArray
     },
-
+//_.dropWhile
    dropWhile(array, predicate) {
-     let dropnumber = array.findIndex((element, index)) => {
+     let dropNumber = array.findIndex((element, index)) => {
        return !(predicate(element, index, array));
      let droppedArray = this.drop(array.dropNumber);
        return droppedArray;
      }
    },
-
-     chunk(array, size) {
+ //._chunk()
+    chunk(array, size) {
        if(size === undefined) {
          size = 1
        }
@@ -89,3 +88,11 @@ const _ = {
        }
        return arrayChunk
      }
+};
+
+
+
+
+
+// Do not write or modify code below this line.
+module.exports = _;
