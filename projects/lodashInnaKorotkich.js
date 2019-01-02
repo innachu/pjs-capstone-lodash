@@ -6,7 +6,7 @@ const _ = {
    return clampedValue;
  },
 //_.inRange()
-    inRange(number, start, end) {
+   inRange(number, start, end) {
     if(end === undefined) {
        end = start;
        start = 0;
@@ -20,7 +20,7 @@ const _ = {
      return isInRange;
    },
 //_.words
-    words = (string) => {
+    words(string) => {
       let words = string.split(' ');
       return words()
     },
@@ -69,7 +69,7 @@ const _ = {
       return droppedArray
     },
 //_.dropWhile
-   dropWhile(array, predicate) {
+    dropWhile(array, predicate) {
      let dropNumber = array.findIndex((element, index)) => {
        return !(predicate(element, index, array));
      let droppedArray = this.drop(array.dropNumber);
